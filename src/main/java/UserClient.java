@@ -67,7 +67,7 @@ public class UserClient extends RestAssuredClient {
 
     @Step("delete user")
     public Response deleteUser() {
-        if (this.accessToken != "") {
+        if (this.accessToken.equals("")) {
             return given()
                     .spec(getBaseSpec())
                     .auth().oauth2(accessToken)
